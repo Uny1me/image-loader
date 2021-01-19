@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Preloader</title>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+</head>
+
+<style>
+    .remove {
+        animation: vanish 1s forwards;
+    }
+    @keyframes vanish {
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+</style>
+<body>
+    <div class="card mr-auto ml-auto mt-5" style="width: 18rem;">
+        <img src="./load.gif" class="card-img-top mt-4" alt="" style="position: absolute;">
+        <img src="https://media.gettyimages.com/photos/double-checking-their-shipping-schedule-picture-id613535506?s=2048x2048" class="card-img-top" alt="">
+        <div class="card-header">Hello</div>
+    </div>
+</body>
+
+<script>
+    var img = document.querySelector('img')
+
+    img.addEventListener('load', preload)
+
+    function preload() {
+        img.classList.add('remove');
+    }
+</script>
+
+</html>
